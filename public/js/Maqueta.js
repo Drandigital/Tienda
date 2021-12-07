@@ -96,11 +96,12 @@ function redireccionarVentana(objEvento, sUrl, sTitulo, sOpciones, sid_submenu) 
     var lstOpciones = sOpciones.split('|');
 
     var lstOpcionesVentanaHab = [];
-
+    console.log(gObjSesion.opcion);
     if (gObjSesion !== null && gObjSesion.opcion) {
 
         lstOpcionesVentanaHab = gObjSesion.opcion.filter(function (obj) {
             console.log(obj);
+            console.log(obj.IdOpcion);
             return obj.IdOpcion == id_submenu;
         });
 
@@ -180,7 +181,7 @@ function redireccionarVentana(objEvento, sUrl, sTitulo, sOpciones, sid_submenu) 
 
                 sUrl = sUrl + "&id_empresa=" + gObjSesion.user.id_empresa;
 
-                sUrl = sUrl + "&id_empresa=" + gObjSesion.ObjLogin.id_empresa;
+      
 
 
             }
@@ -201,7 +202,7 @@ function redireccionarVentana(objEvento, sUrl, sTitulo, sOpciones, sid_submenu) 
         });
 
         $("#div_btnOperaciones").find(".btn[hab='0']").removeAttr("title");
-        $("#div_btnOperaciones").find(".btn[hab='0']").attr("title", "No tiene permisos para esta opción");
+        $("#div_btnOperaciones").find(".btn[hab='0']").attr("title", " tiene permisos para esta opción");
 
     }
 }
